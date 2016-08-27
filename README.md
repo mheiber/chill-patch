@@ -7,10 +7,12 @@ chill-patch enables you to add methods to JS classes safely, with none of the pr
 ```js
 const chillPatch = require('chill-patch')
 const lastFunc = arr => arr[arr.length - 1]
-// `last` will be a unique Symbol
-const last = chillPatch(Array, lastFunc, 'last')
 const array = [1, 2, 3]
 
+// safely add a method to `Array`
+const last = chillPatch(Array, lastFunc, 'last')
+
+// call the new method!
 array[last]() //=> 3
 ```
 
@@ -31,6 +33,10 @@ set[toggle](4) // Set([1, 2, 3, 4])
 ```
 
 > I don't 100% recommend using `chill-patch`, since [the pipeline operator](#something-better) may be coming to JavaScript, and it's much more elegant.
+
+## Install
+
+`npm install chill-patch`
 
 ## Uses
 
@@ -65,6 +71,10 @@ foo[should]().deepEqual({a: 3}) // fails
 ```
 
 ## API
+
+```js
+chillPatch(Klass, func, optionalDescription)
+```
 
 - `Klass` is an ES5-style or ES2015-style class
 - `func` is a function with any number of arguments
