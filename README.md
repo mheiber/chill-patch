@@ -1,4 +1,4 @@
-![http://chillestmonkey.com](http://chillestmonkey.com/img/monkey.gif)
+[![http://chillestmonkey.com](http://chillestmonkey.com/img/monkey.gif)](http://chillestmonkey.com/)
 
 # chill-patch: Stress-free Monkey Patching for JavaScript
 
