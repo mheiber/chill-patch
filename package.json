@@ -1,0 +1,27 @@
+{
+  "name": "chill-patch",
+  "version": "1.0.0",
+  "description": "Stress-free monkey-patching",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mheiber/chill-patch.git"
+  },
+  "keywords": [
+    "mokey-patch",
+    "refinement",
+    "refinements",
+    "ES2015",
+    "functional",
+    "category"
+  ],
+  "author": "Max Heiber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mheiber/chill-patch/issues"
+  },
+  "homepage": "https://github.com/mheiber/chill-patch#readme"
+}
