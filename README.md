@@ -32,6 +32,10 @@ set[toggle](4) // Set([1, 2, 3, 4])
 
 > I don't 100% recommend using `chill-patch`, since [the pipeline operator](#something-better) may be coming to JavaScript, and it's much more elegant.
 
+## Install
+
+`npm install chill-patch`
+
 ## Uses
 
 - Method-chaining-style syntax:
