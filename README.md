@@ -7,10 +7,12 @@ chill-patch enables you to add methods to JS classes safely, with none of the pr
 ```js
 const chillPatch = require('chill-patch')
 const lastFunc = arr => arr[arr.length - 1]
-// `last` will be a unique Symbol
-const last = chillPatch(Array, lastFunc, 'last')
 const array = [1, 2, 3]
 
+// safely add a method to `Array`
+const last = chillPatch(Array, lastFunc, 'last')
+
+// call the new method!
 array[last]() //=> 3
 ```
 
