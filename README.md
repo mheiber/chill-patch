@@ -70,6 +70,10 @@ foo[should]().deepEqual({a: 3}) // fails
 
 ## API
 
+```js
+chillPatch(Klass, func, optionalDescription)
+```
+
 - `Klass` is an ES5-style or ES2015-style class
 - `func` is a function with any number of arguments
 - `optionalDescription` is used as the [`description` of the symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol#Parameters).
