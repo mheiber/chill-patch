@@ -14,20 +14,7 @@ const array = [1, 2, 3]
 array[last]() //=> 3
 ```
 
-`chill-patch` is safe because the return value is a [Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) and symbols are guaranteed to be unique. That means that the only way to access the new method you created is to have access to the symbol. 
-
-> The only way another programmer can get access to symbols on an object in another scope is if they are [hellbent on doing so](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols), in which case they know they are going off-roading.
-
-When you add a property to a prototype using a symbol, it's hidden, so you can safely pass off the patched object to other parts of the codebase, without other programmers knowing its there or being affected by it.
-
-```js
-// after the above code is run, there is no change to the `ownPropertyNames` of the patched class
-
-Object.getOwnPropertyNames(Array.prototype) // doesn't include anything new!
-
-```
-
-Another advantage of the `chill-patch` API is that you can add methods to objects without using `this`! So you can use off-the-shelf `this`-less functions without doing anything special.
+You can use `chill-patch` to use off-the-shelf `this`-less functions as methods:
 
 ```js
 const toggleSet = require('toggle-set')
@@ -82,6 +69,21 @@ foo[should]().deepEqual({a: 3}) // fails
 - `Klass` is an ES5-style or ES2015-style class
 - `func` is a function with any number of arguments
 - `optionalDescription` is used as the [`description` of the symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol#Parameters).
+
+## Why it's Safe
+
+`chill-patch` is safe because the return value is a [Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) and symbols are guaranteed to be unique. That means that the only way to access the new method you created is to have access to the symbol. 
+
+> The only way another programmer can get access to symbols on an object in another scope is if they are [hellbent on doing so](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols), in which case they know they are going off-roading.
+
+When you add a property to a prototype using a symbol, it's hidden, so you can safely pass off the patched object to other parts of the codebase, without other programmers knowing its there or being affected by it.
+
+```js
+// after the above code is run, there is no change to the `ownPropertyNames` of the patched class
+
+Object.getOwnPropertyNames(Array.prototype) // doesn't include anything new!
+
+```
 
 ## Similar Tech in other Languages
 
