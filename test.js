@@ -1,14 +1,17 @@
-const assertEq = require('assert').equal
 const chillPatch = require('./index.js')
+const should = chillPatch(Object, require('should/as-function'))
 
-const lastFunc = arr => arr[arr.length - 1]
+const foo = {a: 2}
 
-const test = () => {
-  const last = chillPatch(Array, lastFunc, 'last')
-  const actual = [1, 2, 3][last]()
-  const expected = 3
-  assertEq(actual, expected, 'Safely patches a class')
+foo[should]().deepEqual({a: 2})
+
+const exceptions = []
+
+try {
+  foo[should]().deepEqual({a: 3}) // fails
+}
+catch(exception){
+  exceptions.push(exception)
 }
 
-test()
-console.log('success')
+exceptions[should]().have.length(1)
