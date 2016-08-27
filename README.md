@@ -87,6 +87,8 @@ foo[should]().deepEqual({a: 3}) // fails
 
 - Haskell [Typeclasses](http://learnyouahaskell.com/types-and-typeclasses#typeclasses-101) and Rust [Traits](https://blog.rust-lang.org/2015/05/11/traits.html)
 
+- Nim [method call syntax](http://nim-lang.org/docs/manual.html#procedures-method-call-syntax)
+
 ## Something Better
 
 The [JavaScript Pipeline Operator proposal](https://github.com/mindeavor/es-pipeline-operator) accomplishes the same syntactic convenience more simply and elegantly. The following two expressions would be equivalent:
