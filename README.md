@@ -1,3 +1,5 @@
+[![http://chillestmonkey.com](http://chillestmonkey.com/img/monkey.gif)](http://chillestmonkey.com/)
+
 # chill-patch: Stress-free Monkey Patching for JavaScript
 
 chill-patch enables you to add methods to JS classes safely, with none of the problems of traditional monkey-patching.
