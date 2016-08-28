@@ -2,7 +2,7 @@
 
 # chill-patch: Stress-free Monkey Patching for JavaScript
 
-chill-patch enables you to add methods to JS classes [safely](https://medium.com/@maxheiber/safe-monkey-patching-with-es2015-symbol-e36fb01ab794#ecd9), with none of the [problems of traditional monkey-patching](https://medium.com/@maxheiber/safe-monkey-patching-with-es2015-symbol-e36fb01ab794#44da).
+chill-patch enables you to add methods to JS classes, with none of the [problems of traditional monkey-patching](https://medium.com/@maxheiber/safe-monkey-patching-with-es2015-symbol-e36fb01ab794#44da).
 
 ```js
 const chillPatch = require('chill-patch')
