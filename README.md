@@ -2,7 +2,7 @@
 
 # chill-patch: Stress-free Monkey Patching for JavaScript
 
-chill-patch enables you to add methods to JS classes safely, with none of the problems of traditional monkey-patching.
+chill-patch enables you to add methods to JS classes [safely](https://medium.com/@maxheiber/safe-monkey-patching-with-es2015-symbol-e36fb01ab794#ecd9), with none of the [problems of traditional monkey-patching](https://medium.com/@maxheiber/safe-monkey-patching-with-es2015-symbol-e36fb01ab794#44da).
 
 ```js
 const chillPatch = require('chill-patch')
@@ -19,20 +19,18 @@ array[last]() //=> 3
 You can use `chill-patch` to use off-the-shelf `this`-less functions as methods:
 
 ```js
+// Using toggle-set without chill-patch
 const toggleSet = require('toggle-set')
 const set = new Set([1, 2, 3])
 
 toggleSet(set, 1) // Set([2, 3])
 
-const chillPatch = require('chill-patch')
-
+// Using toggle-set with chill-patch
 const toggle = chillPatch(Set, toggleSet)
 
 set[toggle](4) // Set([1, 2, 3, 4])
 
 ```
-
-> I don't 100% recommend using `chill-patch`, since [the pipeline operator](#something-better) may be coming to JavaScript, and it's much more elegant.
 
 ## Install
 
